@@ -1,5 +1,14 @@
 {
     "singles": "Singles",
     "albums": "Albums",
-    "albumsPlaceholder": "Albums will be here"
+    "albumsPlaceholder": "Albums will be here",
+    "notSelected": "No album selected",
+    "created": "Created: {{date}}",
+    "updated": "Updated: {{date}}",
+    "noDescription": "No description available",
+    "editDescription": "Edit description",
+    "save": "Save",
+    "saving": "Saving...",
+    "saveError": "Error saving description",
+    "uploadTrack": "Upload track"
 }

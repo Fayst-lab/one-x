@@ -5,7 +5,6 @@ import { apiJson } from 'shared/api';
 
 export const likeAlbum = async (albumId: string): Promise<void> => {
     const { authData, toggleLikeAlbum } = useUserStore.getState();
-
     if (!authData) {
         toast.error('Войдите, чтобы лайкать');
         return;

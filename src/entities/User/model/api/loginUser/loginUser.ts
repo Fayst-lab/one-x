@@ -9,51 +9,24 @@ interface LoginProps {
     password: string;
 }
 
-export const loginUser = async (authData: LoginProps): Promise<User | null> => {
-    return toast
+export const loginUser = async ({ email, password }: LoginProps): Promise<User | null> =>
+    toast
         .promise(
             (async () => {
-                const response = await apiJson.get<User[]>('/users', {
-                    params: { email: authData.email },
-                });
-
-                if (!response.data || response.data.length === 0) {
-                    throw new Error('Пользователь с таким email не найден');
-                }
-
-                const user = response.data[0];
-
-                const isPasswordValid = bcrypt.compareSync(authData.password, user.password);
-                if (!isPasswordValid) {
+                const { data } = await apiJson.get<User[]>('/users', { params: { email } });
+                const user = data[0];
+                if (!user) throw new Error('Пользователь с таким email не найден');
+                if (!bcrypt.compareSync(password, user.password))
                     throw new Error('Неверный пароль');
-                }
-                const setAuthData = useUserStore.getState().setAuthData;
-                setAuthData(user);
 
-                // Сохраняем куку с id и email (без пароля!)
-                const cookieValue = encodeURIComponent(
-                    JSON.stringify({
-                        id: user.id,
-                        email: user.email,
-                        password: authData.password,
-                    }),
-                );
-
-                // Устанавливаем куку на 7 дней
-                document.cookie = `user=${cookieValue}; path=/; max-age=${7 * 24 * 60 * 60}`;
-
+                localStorage.setItem('access_token', btoa(`${user.id}:${user.email}`));
+                useUserStore.getState().setAuthData(user);
                 return user;
             })(),
             {
                 loading: 'Вход в систему...',
                 success: 'Вы успешно вошли',
-                error: (err: unknown) => {
-                    if (err instanceof Error) {
-                        return err.message;
-                    }
-                    return 'Ошибка при входе в систему';
-                },
+                error: (err) => (err instanceof Error ? err.message : 'Ошибка при входе'),
             },
         )
         .catch(() => null);
-};

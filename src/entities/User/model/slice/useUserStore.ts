@@ -4,6 +4,9 @@ import toast from 'react-hot-toast';
 import type { GenreRecommendation, User, UserSchema } from '../types/user';
 import { useTrackStore } from 'entities/Track';
 import { genresList, type Genre } from 'entities/Group/model/types/group';
+import { useGroupStore } from 'entities/Group';
+import { usePlayerStore } from 'entities/Player/model';
+import { useAlbumStore } from 'entities/Album';
 
 const STEP_TRACK = 1;
 const STEP_ALBUM = 5;
@@ -55,7 +58,7 @@ function normalizeTo100(recs: GenreRecommendation[], target: Genre): GenreRecomm
 
 interface UserStore extends UserSchema {
     authData?: User | null;
-    setAuthData: (user: User) => void;
+    setAuthData: (user: User | null) => void;
     logout: () => void;
     toggleLikeTrack: (trackId: string) => void;
     toggleLikeGroup: (groupId: string) => void;
@@ -68,10 +71,12 @@ export const useUserStore = create<UserStore>()((set, get) => ({
     setAuthData: (user) => set({ authData: user }),
 
     logout: () => {
-        set({ authData: null });
-        ['user=; max-age=0; path=/', 'user=; max-age=0; path=/; secure'].forEach(
-            (c) => (document.cookie = c),
-        );
+        localStorage.removeItem('access_token');
+        useUserStore.getState().setAuthData(null);
+        useGroupStore.getState().setCurrentGroup(null);
+        useTrackStore.getState().reset();
+        usePlayerStore.getState().reset();
+        useAlbumStore.getState().reset();
         toast('Вы вышли из системы', { icon: '👋' });
     },
 
@@ -109,9 +114,7 @@ export const useUserStore = create<UserStore>()((set, get) => ({
         if (isLiked) likes.delete(albumId);
         else likes.add(albumId);
 
-        const track = useTrackStore.getState().tracks.find((t) => t.albumId === albumId);
-        if (!track?.genre) return;
-        const genre = track.genre as Genre;
+        const genre = useGroupStore.getState().currentGroup?.genre as Genre;
 
         let recs = adjustRecs(user.recommendation, genre, isLiked ? -STEP_ALBUM : STEP_ALBUM);
         recs = normalizeTo100(recs, genre);
@@ -128,15 +131,14 @@ export const useUserStore = create<UserStore>()((set, get) => ({
     toggleLikeGroup: (groupId: string) => {
         const user = get().authData;
         if (!user) return;
-
         const likes = new Set(user.likedGroups || []);
         const isLiked = likes.has(groupId);
         if (isLiked) likes.delete(groupId);
         else likes.add(groupId);
 
-        const track = useTrackStore.getState().tracks.find((t) => t.groupId === groupId);
-        if (!track?.genre) return;
-        const genre = track.genre as Genre;
+        const currentGroup = useGroupStore.getState().currentGroup;
+        if (!currentGroup) return;
+        const genre = currentGroup.genre as Genre;
 
         let recs = adjustRecs(user.recommendation, genre, isLiked ? -STEP_GROUP : STEP_GROUP);
         recs = normalizeTo100(recs, genre);

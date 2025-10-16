@@ -4,5 +4,7 @@ export type { RegistrationSchema } from './model/types/registrationSchema';
 export { likeTrack } from './model/api/likeTrack/likeTrack';
 export { likeAlbum } from './model/api/likeAlbum/likeAlbum';
 export { loginUser } from './model/api/loginUser/loginUser';
+export { likeGroup } from './model/api/likeGroup/likeGroup';
 export { registrationUser } from './model/api/registrationUser/registrationUser';
+export { getUserFromToken } from './model/api/getUserFromToken/getUserFromToken';
 export { useUserStore } from './model/slice/useUserStore';

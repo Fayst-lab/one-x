@@ -37,14 +37,19 @@ export const TrackItem: React.FC<TrackItemProps> = ({ track, groupName, onConfir
                 style={{ backgroundColor: 'var(--bg-container)' }}
             >
                 <div className="relative w-20 h-20 flex-shrink-0">
-                    <img
-                        loading="lazy"
-                        width={80}
-                        height={80}
-                        src={track.cover}
-                        alt={track.title}
-                        className="object-cover rounded-tr-lg rounded-br-lg"
-                    />
+                    {track.cover ? (
+                        <img
+                            loading="lazy"
+                            width={80}
+                            height={80}
+                            src={track.cover}
+                            alt={track.title}
+                            className="object-cover rounded-tr-lg rounded-br-lg"
+                        />
+                    ) : (
+                        <div className="w-20 h-20 bg-gray-300 rounded-tr-lg rounded-br-lg flex items-center justify-center text-gray-500"></div>
+                    )}
+
                     <div className="absolute inset-0 bg-black/0 hover:bg-black/50 transition-colors flex items-center justify-center rounded-tr-lg rounded-br-lg">
                         <PlayButton theme={ButtonTheme.CLEAR} showOnHover trackForPlay={track} />
                     </div>
@@ -80,9 +85,6 @@ export const TrackItem: React.FC<TrackItemProps> = ({ track, groupName, onConfir
                             onClick={onDeleteClick}
                         >
                             {t('delete')}
-                        </div>
-                        <div className="text-sm cursor-pointer hover:bg-gray-100 rounded p-2">
-                            {t('option2')}
                         </div>
                     </Dropdown>
                 </div>

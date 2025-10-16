@@ -18,7 +18,7 @@ export interface Group {
     id: string;
     userId: string;
     name: string;
-    description?: string | null;
+    description: string | null;
     cover: string;
     genre: Genre;
     createdAt: string;

@@ -24,27 +24,22 @@ export function useAlbum() {
     const currentAlbum = useAlbumStore((s) => s.currentAlbum);
     const setCurrentAlbum = useAlbumStore((s) => s.setCurrentAlbum);
 
-    const [desc, setDescState] = useState(currentAlbum?.description ?? '');
     const [saving, setSaving] = useState(false);
     const [isDeleteModalOpen, setIsDeleteModalOpenState] = useState(false);
     const [isEditing, setIsEditingState] = useState(false);
     const fileInputRef = useRef<HTMLInputElement | null>(null);
-
+    const desc = currentAlbum?.description ?? '';
+    const setDesc = (value: string) => {
+        if (!currentAlbum) return;
+        setCurrentAlbum({ ...currentAlbum, description: value });
+    };
     useEffect(() => {
         if (!currentAlbum && albumId && currentGroup) {
             fetchAlbumById(currentGroup.id, albumId).catch(() => toast.error(t('loadAlbumError')));
         }
     }, [albumId, currentAlbum, currentGroup]);
 
-    useEffect(() => {
-        setDescState(currentAlbum?.description ?? '');
-    }, [currentAlbum]);
-
-    const setDesc = useCallback((value: string) => {
-        setDescState(value);
-    }, []);
-
-    const toggleAlbum = useCallback(() => {
+    const toggleLikeAlbum = useCallback(() => {
         if (!currentAlbum?.id) {
             toast.error(t('albumNotSelected'));
             return;
@@ -131,7 +126,7 @@ export function useAlbum() {
             onSave,
             onDelete,
             fileInputRef,
-            toggleAlbum,
+            toggleLikeAlbum,
             openFileDialog,
             onFileChange,
             likedAlbums, // ← теперь включено

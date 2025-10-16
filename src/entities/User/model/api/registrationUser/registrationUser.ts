@@ -10,61 +10,39 @@ interface RegistrationProps {
     password: string;
 }
 
-export const registrationUser = async (authData: RegistrationProps): Promise<User | null> => {
-    return toast
+export const registrationUser = async ({
+    email,
+    password,
+}: RegistrationProps): Promise<User | null> =>
+    toast
         .promise(
             (async () => {
-                // Проверяем, что email ещё не зарегистрирован
-                const existingUsersResponse = await apiJson.get<User[]>('/users', {
-                    params: { email: authData.email },
+                const { data: existing } = await apiJson.get<User[]>('/users', {
+                    params: { email },
                 });
+                if (existing.length) throw new Error('Пользователь с таким email уже существует');
 
-                if (existingUsersResponse.data.length > 0) {
-                    throw new Error('Пользователь с таким email уже существует');
-                }
-
-                // Хэшируем пароль перед отправкой
-                const salt = bcrypt.genSaltSync(10);
-                const hashedPassword = bcrypt.hashSync(authData.password, salt);
                 const newUser: User = {
                     id: uuidv4(),
-                    email: authData.email,
-                    password: hashedPassword,
+                    email,
+                    password: bcrypt.hashSync(password, bcrypt.genSaltSync(10)),
                     avatar: '',
                     username: '',
                     createdAt: new Date().toISOString(),
                 };
-                const response = await apiJson.post<User>('/users', newUser);
 
-                if (!response.data) {
-                    throw new Error('Empty response');
-                }
-                // Сохраняем куку с id и email (без пароля!)
-                const cookieValue = encodeURIComponent(
-                    JSON.stringify({
-                        id: newUser.id,
-                        email: authData.email,
-                        password: authData.password,
-                    }),
-                );
+                const { data } = await apiJson.post<User>('/users', newUser);
+                if (!data) throw new Error('Ошибка при создании пользователя');
 
-                // Устанавливаем куку на 7 дней
-                document.cookie = `user=${cookieValue}; path=/; max-age=${7 * 24 * 60 * 60}`;
-                const setAuthData = useUserStore.getState().setAuthData;
-                setAuthData(response.data);
+                localStorage.setItem('access_token', btoa(`${data.id}:${data.email}`));
+                useUserStore.getState().setAuthData(data);
 
-                return response.data;
+                return data;
             })(),
             {
                 loading: 'Регистрация...',
                 success: 'Вы успешно зарегистрировались',
-                error: (err: unknown) => {
-                    if (err instanceof Error) {
-                        return err.message;
-                    }
-                    return 'Ошибка при регистрации';
-                },
+                error: (err) => (err instanceof Error ? err.message : 'Ошибка при регистрации'),
             },
         )
         .catch(() => null);
-};

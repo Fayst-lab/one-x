@@ -1,8 +1,7 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { FaPlay, FaPause } from 'react-icons/fa';
-import { fetchTrack, fetchTrackRecommendations } from 'entities/Track';
+import { fetchAllTraks, fetchTrack, fetchTrackRecommendations } from 'entities/Track';
 import { useTrackStore, type Track } from 'entities/Track';
 import { usePlayerStore } from 'entities/Player/model';
 import { useAlbumStore, type Album } from 'entities/Album';
@@ -16,6 +15,7 @@ interface PlayButtonProps {
     theme: ButtonTheme;
     showOnHover?: boolean;
     trackForPlay?: Track | null;
+    groupForPlay?: boolean;
     recommendation?: boolean;
 }
 
@@ -27,11 +27,12 @@ export const PlayButton = React.memo((props: PlayButtonProps) => {
         showOnHover = false,
         trackForPlay,
         recommendation = false,
+        groupForPlay,
     } = props;
-    const { t } = useTranslation('playButton');
 
     const tracks = useTrackStore((s) => s.tracks);
-
+    const isGroup = usePlayerStore((g) => g.isGroup);
+    const setIsGroup = usePlayerStore((g) => g.setIsGroup);
     const togglePlay = usePlayerStore((s) => s.togglePlay);
     const setCurrentTrack = usePlayerStore((s) => s.setCurrentTrack);
     const currentTrack = usePlayerStore((s) => s.currentTrack);
@@ -46,11 +47,29 @@ export const PlayButton = React.memo((props: PlayButtonProps) => {
 
     const isCurrentAlbum = albumForPlay?.id === currentAlbum?.id;
     const isCurrentTrack = trackForPlay?.id === currentTrack?.id;
-    const hasCurrentInAlbum = albumForPlay
-        ? albumForPlay.trackIds.includes(currentTrack?.id ?? '')
-        : false;
+
+    const hasCurrentInAlbum =
+        albumForPlay && !groupForPlay
+            ? albumForPlay.trackIds.includes(currentTrack?.id ?? '')
+            : false;
 
     const playTrack = async () => {
+        if (groupForPlay && !albumForPlay && !trackForPlay && currentGroup) {
+            if (isGroup && tracks.length > 0) {
+                togglePlay();
+                return;
+            } else {
+                // 2) Иначе — первый клик: грузим треки и сразу стартуем первый
+                const all = await fetchAllTraks(currentGroup.id, currentGroup.name);
+                if (all.length > 0) {
+                    setCurrentTrack(all[0]);
+                } else {
+                    toast.error('Треки не найдены');
+                }
+                setIsGroup(true);
+            }
+        }
+
         // 1. Рекомендации
         if (recommendation) {
             if (isRecommendation) {
@@ -131,32 +150,32 @@ export const PlayButton = React.memo((props: PlayButtonProps) => {
         if (trackForPlay) {
             if (!isCurrentTrack) {
                 setCurrentTrack(trackForPlay);
+            } else {
+                togglePlay();
             }
-            togglePlay();
         }
     };
 
     // Иконка
     let Icon: React.ComponentType<{ className?: string }>;
-    if (recommendation) {
+    // 1. Групповой режим
+    if (groupForPlay) {
+        Icon = isPlaying ? FaPause : FaPlay;
+    }
+    // 2. Рекомендации
+    else if (recommendation) {
         Icon = isRecommendation && isPlaying ? FaPause : FaPlay;
-    } else if (albumForPlay) {
-        if (isRecommendation) {
-            Icon = FaPlay;
-        } else {
-            Icon = isPlaying && hasCurrentInAlbum ? FaPause : FaPlay;
-        }
-    } else {
-        Icon = isPlaying && isCurrentTrack ? FaPause : FaPlay;
     }
 
-    // aria-label
-    const isActive = recommendation
-        ? isRecommendation && isPlaying
-        : albumForPlay
-          ? !isRecommendation && isPlaying && hasCurrentInAlbum
-          : isPlaying && isCurrentTrack;
-    const ariaLabel = isActive ? t('pause') : t('play');
+    // 3. Альбом
+    else if (albumForPlay) {
+        Icon = isRecommendation ? FaPlay : isPlaying && hasCurrentInAlbum ? FaPause : FaPlay;
+    }
+
+    // 4. Отдельный трек
+    else {
+        Icon = isPlaying && isCurrentTrack ? FaPause : FaPlay;
+    }
 
     return (
         <Button
@@ -167,7 +186,6 @@ export const PlayButton = React.memo((props: PlayButtonProps) => {
             className={`transition-opacity ${
                 showOnHover ? 'opacity-0 hover:opacity-100' : 'opacity-100'
             } ${className}`}
-            aria-label={ariaLabel}
         >
             <Icon className="h-6 w-6 text-white" />
         </Button>

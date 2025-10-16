@@ -20,8 +20,8 @@ interface AlbumTracksResponse {
 export async function fetchTrack(
     groupId: string,
     groupName: string,
-    albumId: string,
-    albumName: string,
+    albumId: string | null,
+    albumName: string | null,
 ): Promise<Track[]> {
     try {
         const [mainResp, mediaResp] = await Promise.all([
@@ -38,6 +38,7 @@ export async function fetchTrack(
         const main = mainResp.data;
         if (!Array.isArray(main)) {
             useTrackStore.getState().setTracks([]);
+            useTrackStore.getState().setSinglesTrack([]);
             return [];
         }
 
@@ -55,25 +56,41 @@ export async function fetchTrack(
             media = mediaResp.data as MediaTrack[];
         }
 
-        const merged: Track[] = main
-            .map((t) => {
-                const m = media.find((m) => m.trackName === t.id || m.trackName === t.title);
-                return {
-                    ...t,
-                    cover: m?.coverUrl ?? '',
-                    audioUrl: m?.audioUrl ?? '',
-                    groupName,
-                };
-            })
-            .filter((t) =>
-                albumId && albumName ? t.albumId === albumId : !t.albumId || t.albumId === '',
-            );
+        // Формируем два массива: альбомные и синглы
+        const albumTracks: Track[] = [];
+        const singles: Track[] = [];
 
-        useTrackStore.getState().setTracks(merged);
-        return merged;
+        main.forEach((t) => {
+            const m = media.find((m) => m.trackName === t.id || m.trackName === t.title);
+            const coverUrl = m?.coverUrl ?? ''; // всегда получаем coverUrl, даже если трек без альбома
+            const trackWithMedia: Track = {
+                ...t,
+                cover: coverUrl,
+                audioUrl: m?.audioUrl ?? '',
+                groupName,
+            };
+
+            if (t.albumId && t.albumId !== '') {
+                // Трек с альбомом
+                if (!albumId || albumId === t.albumId) {
+                    albumTracks.push(trackWithMedia);
+                }
+            } else {
+                // Синглы (без albumId)
+                singles.push(trackWithMedia);
+            }
+        });
+
+        // Записываем в стор
+        useTrackStore.getState().setTracks(albumTracks);
+        useTrackStore.getState().setSinglesTrack(singles);
+
+        // Возвращаем объединённый массив (если нужно)
+        return albumTracks.length > 0 ? albumTracks : singles;
     } catch (error: unknown) {
         console.error('Ошибка при загрузке треков с медиа', error);
         useTrackStore.getState().setTracks([]);
+        useTrackStore.getState().setSinglesTrack([]);
         return [];
     }
 }

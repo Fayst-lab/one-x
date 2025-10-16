@@ -1,6 +1,6 @@
 // src/features/GroupContentSwitcher/model/useGroupContentSwitcherStore.test.ts
 import { describe, it, expect } from 'vitest';
-import { useGroupContentSwitcherStore } from './useGroup';
+import { useGroupContentSwitcherStore } from './useGroupStore';
 
 describe('useGroupContentSwitcherStore', () => {
     it('should have default selected value "singles"', () => {

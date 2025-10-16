@@ -1,76 +1,67 @@
-// src/pages/Group/ui/Group.tsx
-
-import { type FC, memo, useCallback } from 'react';
+import { type FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useGroupContentSwitcherStore, type ContentType } from '../model/useGroup';
-import { useThemeStore } from 'shared/config/theme/themeStore';
 import { ListAlbum } from 'entities/Album';
 import { ListTrack } from 'entities/Track';
-import { Button, ButtonNavigation, GroupCover } from 'shared/ui';
-
-const TabButton: FC<{
-    id: ContentType;
-    label: string;
-    isActive: boolean;
-    onClick: (id: ContentType) => void;
-}> = memo(({ id, label, isActive, onClick }) => {
-    const theme = useThemeStore((s) => s.theme);
-
-    return (
-        <Button
-            type="button"
-            className="px-6 py-3 rounded-lg font-semibold text-lg transition-colors duration-200"
-            style={{
-                backgroundColor: isActive ? theme['--primary-color'] : '#E5E7EB',
-                color: isActive ? '#fff' : theme['--text-color'],
-                boxShadow: isActive ? `0 0 8px ${theme['--primary-color']}` : undefined,
-            }}
-            onClick={() => onClick(id)}
-        >
-            {label}
-        </Button>
-    );
-});
-TabButton.displayName = 'TabButton';
+import { ConfirmDeleteModal, EntityHeader, Text } from 'shared/ui';
+import { useGroup } from '../model/useGroup';
 
 export const Group: FC = memo(() => {
     const { t } = useTranslation('group');
-    const selected = useGroupContentSwitcherStore((s) => s.selected);
-    const setSelected = useGroupContentSwitcherStore((s) => s.setSelected);
+    const {
+        currentGroup,
+        isEditing,
+        saving,
+        isDeleteModalOpen,
+        setIsEditing,
+        onSave,
+        toggleLikeGroup,
+        setIsDeleteModalOpen,
+        desc,
+        setDesc,
+        likedGroups,
+    } = useGroup();
 
-    const onTabClick = useCallback((id: ContentType) => setSelected(id), [setSelected]);
+    if (!currentGroup) return null;
 
-    const tabs: { id: ContentType; label: string }[] = [
-        { id: 'singles', label: t('singles') },
-        { id: 'albums', label: t('albums') },
-    ];
-
+    const isLiked = likedGroups.includes(currentGroup.id);
+    const a = () => {};
     return (
-        <div className="max-w-5xl mx-auto p-6 sm:p-8 flex flex-col md:flex-row gap-8 md:gap-12 justify-center items-center min-h-[70vh]">
-            <GroupCover />
+        <div className="relative flex flex-col gap-1 py-6 px-20 text-white min-h-[400px]">
+            <ConfirmDeleteModal
+                isOpen={isDeleteModalOpen}
+                onClose={() => setIsDeleteModalOpen(false)}
+                onConfirm={a}
+            />
+            <EntityHeader
+                entity={currentGroup}
+                isEditing={isEditing}
+                saving={saving}
+                desc={desc}
+                onChangeDesc={setDesc}
+                onSaveDesc={onSave}
+                onStartEdit={() => setIsEditing(true)}
+                onToggleLike={toggleLikeGroup}
+                t={t}
+                className="pb-2"
+                isLiked={isLiked}
+                onOpenDeleteModal={() => setIsDeleteModalOpen(true)}
+            />
 
-            <div className="flex flex-col w-full md:w-2/3 items-center mt-20">
-                <nav className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6 sm:mb-8 w-full min-h-[56px]">
-                    {tabs.map((tab) => (
-                        <TabButton
-                            key={tab.id}
-                            {...tab}
-                            isActive={selected === tab.id}
-                            onClick={onTabClick}
-                        />
-                    ))}
-                </nav>
-
-                <section className="w-full text-center text-gray-600 text-base sm:text-lg min-h-[300px]">
-                    {selected === 'albums' ? (
-                        <ListAlbum />
-                    ) : (
-                        <ListTrack albumId={''} albumName={''} />
-                    )}
-                </section>
+            {/* Синглы */}
+            <div className="mt-12">
+                <Text className="text-2xl font-semibold mb-4 text-white text-center">
+                    {t('singles')}
+                </Text>
+                <ListTrack albumId={null} albumName="" />
             </div>
 
-            <ButtonNavigation settings />
+            {/* Альбомы */}
+            <div className="mt-12">
+                <Text className="text-2xl font-semibold mb-4 text-white text-center">
+                    {t('albums')}
+                </Text>
+                <ListAlbum />
+            </div>
         </div>
     );
 });

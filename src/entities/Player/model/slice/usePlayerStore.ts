@@ -11,9 +11,13 @@ export interface PlayerState {
     volume: number;
     isMuted: boolean;
     audio: HTMLAudioElement | null;
-    // Новые поля для рекомендаций
+
+    // Режимы
     isRecommendation: boolean;
     setIsRecommendation: (isRecommendation: boolean) => void;
+
+    isGroup: boolean;
+    setIsGroup: (type: boolean) => void;
 
     setCurrentTrack: (track: Track) => void;
     setProgress: (progress: number) => void;
@@ -22,6 +26,7 @@ export interface PlayerState {
     setVolume: (volume: number) => void;
     setIsMuted: (isMuted: boolean) => void;
     togglePlay: () => void;
+    reset: () => void;
 }
 
 export const usePlayerStore = create<PlayerState>((set, get) => ({
@@ -33,8 +38,14 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
     volume: 1,
     isMuted: false,
     audio: null,
-    // Инициализация массива рекомендаций
+
     isRecommendation: false,
+    setIsRecommendation: (isRecommendation) => {
+        set({ isRecommendation });
+    },
+
+    isGroup: false,
+    setIsGroup: (isGroup) => set({ isGroup }),
 
     setCurrentTrack: (track) => {
         const prev = get();
@@ -76,9 +87,7 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
 
         set({ currentTrack: track, audio, isPlaying: true });
     },
-    setIsRecommendation: (isRecommendation) => {
-        set({ isRecommendation });
-    },
+
     setProgress: (progress) => {
         const audio = get().audio;
         if (audio) {
@@ -115,5 +124,28 @@ export const usePlayerStore = create<PlayerState>((set, get) => ({
     togglePlay: () => {
         const { isPlaying, setIsPlaying } = get();
         setIsPlaying(!isPlaying);
+    },
+
+    reset: () => {
+        const { audio } = get();
+
+        if (audio) {
+            audio.pause();
+            audio.src = '';
+            audio.removeAttribute('src');
+        }
+
+        set({
+            currentTrack: null,
+            progress: 0,
+            currentTime: 0,
+            isPlaying: false,
+            duration: 0,
+            volume: 1,
+            isMuted: false,
+            audio: null,
+            isRecommendation: false,
+            isGroup: false,
+        });
     },
 }));

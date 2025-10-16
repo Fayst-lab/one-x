@@ -13,7 +13,7 @@ const NotFoundPage = React.lazy(() => import('pages/NotFoundPage'));
 const SettingsUserPage = React.lazy(() => import('pages/SettingsUserPage'));
 const AlbumPage = React.lazy(() => import('pages/AlbumPage'));
 
-type AppRoutesProps = RouteProps & {
+export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
 };
 
@@ -29,7 +29,7 @@ enum AppRoutes {
     NOT_FOUND = 'not_found',
 }
 
-const RoutePath: Record<AppRoutes, string> = {
+export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.ROOT]: '/',
     [AppRoutes.MAIN]: '/main',
     [AppRoutes.MY_GROUP]: '/my_group',

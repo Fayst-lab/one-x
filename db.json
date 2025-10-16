@@ -7,53 +7,52 @@
       "avatar": "",
       "username": "",
       "createdAt": "2025-07-19T06:25:40.579Z",
-      "likedTracks": [
-        "efda1fe5-5af0-447d-9fa6-108995a11a55"
-      ],
-      "likedAlbums": [
-        "3defbaaa-cec4-454b-8dd2-5e7457d28a13"
-      ],
+      "likedTracks": [],
+      "likedAlbums": [],
       "recommendation": [
         {
           "genre": "Рок",
-          "percent": 15
+          "percent": 20
         },
         {
           "genre": "Метал",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Поп",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Джаз",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Классика",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Хип-хоп",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Электроника",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Блюз",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Регги",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         },
         {
           "genre": "Панк",
-          "percent": 9.444444444444445
+          "percent": 8.88888888888889
         }
+      ],
+      "likedGroups": [
+        "236d217d-c205-4f15-a131-ff1e0cd58590"
       ]
     },
     {
@@ -63,6 +62,22 @@
       "avatar": "",
       "username": "",
       "createdAt": "2025-07-23T16:36:13.688Z"
+    },
+    {
+      "id": "1201ff4f-8e70-4faf-b461-def1c202f3b7",
+      "email": "d@gmail.com",
+      "password": "$2b$10$gz7Gsa6p33yq94W6kZ21pOP5NwrJ7hcm9Y7i6c1G21M7UZPV7JRi6",
+      "avatar": "",
+      "username": "",
+      "createdAt": "2025-08-04T04:52:17.779Z"
+    },
+    {
+      "id": "cc37b0c5-9b88-4525-add3-4dc0d338387b",
+      "email": "x@gmail.com",
+      "password": "$2b$10$C5KBl89IdHHaEbXcN6n22ukYyiPeclcI4UP2Edwa5hqt0ydJOmwYS",
+      "avatar": "",
+      "username": "",
+      "createdAt": "2025-08-04T05:01:26.868Z"
     }
   ],
   "albums": [
@@ -85,7 +100,75 @@
         "d3c11ee1-4a99-45a2-8b9e-0a9f657218c6",
         "72b59702-d47e-4b17-aa42-15ec9ecc6068",
         "1bc52c1a-28fc-49ab-b156-3831a688f0d9",
-        "1c239b8a-c0b1-480f-9881-05756f044481"
+        "1c239b8a-c0b1-480f-9881-05756f044481",
+        "f92c2c2c-fe7e-478a-9919-e641ad96a81d"
+      ]
+    },
+    {
+      "id": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "name": "Outsider",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "description": "asaaaaaaaaaa",
+      "createdAt": "2025-08-04T05:59:21.345Z",
+      "trackIds": [
+        "71f6b3e7-b8f3-4417-86a2-424b9f3629cd",
+        "1a7c5552-7263-4090-90fc-af44bf0f6dd3",
+        "1b436fb0-db14-48bb-8986-3a740928829f",
+        "3ec47617-7409-4b49-a129-eafcddb63f0c",
+        "320818a3-c62a-410b-bbe5-0e884e68dd4e",
+        "4ac43cf8-4f16-43ef-ab33-9eedbfe0146f",
+        "85ef2de2-d970-4bf1-a3cf-7eb3803e9cf8",
+        "e0bed856-b4c4-4cb2-8ea3-c4c9f28a70ea",
+        "7c93c62c-2261-4fc8-b1b3-a89b87ae5345",
+        "9177fac9-48aa-4361-b3aa-88fb39a4d473",
+        "a9da226f-84b8-4865-9f19-5a7ce3c4e9aa",
+        "e49ac361-98cb-4e57-aec0-88a4a70fb4b5"
+      ]
+    },
+    {
+      "id": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "name": "Life Starts Now",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "description": "",
+      "createdAt": "2025-08-04T05:59:56.938Z",
+      "trackIds": [
+        "300e23cd-4330-440d-ab41-9782786799bf",
+        "a2bee63c-0525-46d0-87c6-fa3d044ad8c7",
+        "005fd7f6-4d40-4837-b504-75a2bd9b518e",
+        "0d2ac9c2-964d-41f9-b361-70af36899a04",
+        "16d9d8c2-7ba5-4382-9cf7-8f6d149a5979",
+        "edf86e9e-24e1-4037-b75e-4261f386b0b2",
+        "91f18aee-5893-480a-b9d8-1167a505b40c",
+        "5e5cf173-8b75-4858-abf4-6eebf71aa901",
+        "eab3b830-ef65-42f5-9620-24c1b5271196",
+        "400067f8-03a8-486f-92ea-5d28b6b538e9",
+        "01b6d4b1-7104-4982-8506-192326f70ee2",
+        "4bf1a4eb-d0d7-442a-b41d-9cafc0c52362"
+      ]
+    },
+    {
+      "id": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "name": "Transit Of Venus",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "description": "",
+      "createdAt": "2025-08-04T06:03:54.616Z",
+      "trackIds": [
+        "d977a31b-e33a-4ae7-abed-e843d6b9d544",
+        "c665b284-c21e-4bfa-af8b-69178467f647",
+        "e88f65a1-378a-4643-a339-02b2e1f4c77b",
+        "b0c7cd9c-7de9-4a7c-a4db-1b3440a6a104",
+        "f6f204f7-050e-485b-a8dd-59c09a7dbf49",
+        "90722040-92e5-4ee5-9060-b568c2165976",
+        "840eca69-01cc-4779-85c1-e7835f7313ec",
+        "dd39acb8-ddd9-44d5-9909-70ff580cd6cc",
+        "0034eb82-21a5-4405-98a3-d9397ab49953",
+        "d922667d-bff2-4145-a071-c279d58be548",
+        "22c7c4f3-f4b2-4104-9934-5623417dc0df",
+        "2a6b7703-a621-42a8-9a8d-fdd42f9a65aa",
+        "4677a131-c07a-4d56-a85c-812645be033c"
       ]
     }
   ],
@@ -93,7 +176,7 @@
     {
       "id": "236d217d-c205-4f15-a131-ff1e0cd58590",
       "name": "Three Days Grace",
-      "description": "фывфывфыв",
+      "description": "as",
       "userId": "71ef2da7-dbce-4776-b12f-500745d0493b",
       "genre": "Рок",
       "cover": "http://localhost:4001/groups/Three Days Grace/cover.webp?v=1752908269676",
@@ -264,6 +347,488 @@
       "groupId": "6bdbce80-42ab-4fcf-8c7b-18469e6b0ccd",
       "audioUrl": "http://localhost:4001/groups/Лазарев/Tracks/We are love/We are love.mp3?v=1753288630352",
       "createdAt": "2025-07-23T16:37:10.353Z"
+    },
+    {
+      "id": "71f6b3e7-b8f3-4417-86a2-424b9f3629cd",
+      "title": "Three Days Grace - Chasing The First Time",
+      "duration": 176,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Chasing The First Time.mp3?v=1754287161319",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "4ac43cf8-4f16-43ef-ab33-9eedbfe0146f",
+      "title": "Three Days Grace - Nothing To Lose But You",
+      "duration": 172,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Nothing To Lose But You.mp3?v=1754287161322",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "85ef2de2-d970-4bf1-a3cf-7eb3803e9cf8",
+      "title": "Three Days Grace - Right Left Wrong",
+      "duration": 237,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Right Left Wrong.mp3?v=1754287161323",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "e0bed856-b4c4-4cb2-8ea3-c4c9f28a70ea",
+      "title": "Three Days Grace - Strange Days",
+      "duration": 191,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Strange Days.mp3?v=1754287161324",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "7c93c62c-2261-4fc8-b1b3-a89b87ae5345",
+      "title": "Three Days Grace - The Abyss",
+      "duration": 250,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - The Abyss.mp3?v=1754287161324",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "9177fac9-48aa-4361-b3aa-88fb39a4d473",
+      "title": "Three Days Grace - The Mountain",
+      "duration": 198,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - The Mountain.mp3?v=1754287161325",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "a9da226f-84b8-4865-9f19-5a7ce3c4e9aa",
+      "title": "Three Days Grace - The New Real",
+      "duration": 181,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - The New Real.mp3?v=1754287161325",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "e49ac361-98cb-4e57-aec0-88a4a70fb4b5",
+      "title": "Three Days Grace - Villain I'm Not",
+      "duration": 176,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Villain I'm Not.mp3?v=1754287161344",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "1b436fb0-db14-48bb-8986-3a740928829f",
+      "title": "Three Days Grace - Infra-Red",
+      "duration": 231,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Infra-Red.mp3?v=1754287161321",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "1a7c5552-7263-4090-90fc-af44bf0f6dd3",
+      "title": "Three Days Grace - I Am An Outsider",
+      "duration": 162,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - I Am An Outsider.mp3?v=1754287161320",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "3ec47617-7409-4b49-a129-eafcddb63f0c",
+      "title": "Three Days Grace - Love Me Or Leave Me",
+      "duration": 184,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Love Me Or Leave Me.mp3?v=1754287161321",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "320818a3-c62a-410b-bbe5-0e884e68dd4e",
+      "title": "Three Days Grace - Me Against You",
+      "duration": 209,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/cover.webp?v=1754287161344",
+      "groupName": "Three Days Grace",
+      "albumId": "14c8cb6d-799c-4d35-9c66-620a8798bc40",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Outsider/Three Days Grace - Me Against You.mp3?v=1754287161322",
+      "createdAt": "2025-08-04T05:59:21.350Z"
+    },
+    {
+      "id": "300e23cd-4330-440d-ab41-9782786799bf",
+      "title": "Three Days Grace - Bitter Taste",
+      "duration": 241,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Bitter Taste.mp3?v=1754287196931",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "91f18aee-5893-480a-b9d8-1167a505b40c",
+      "title": "Three Days Grace - Lost In You",
+      "duration": 233,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Lost In You.mp3?v=1754287196934",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "5e5cf173-8b75-4858-abf4-6eebf71aa901",
+      "title": "Three Days Grace - No More",
+      "duration": 225,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - No More.mp3?v=1754287196934",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "eab3b830-ef65-42f5-9620-24c1b5271196",
+      "title": "Three Days Grace - Someone Who Cares",
+      "duration": 292,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Someone Who Cares.mp3?v=1754287196935",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "400067f8-03a8-486f-92ea-5d28b6b538e9",
+      "title": "Three Days Grace - The Good Life",
+      "duration": 173,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - The Good Life.mp3?v=1754287196935",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "01b6d4b1-7104-4982-8506-192326f70ee2",
+      "title": "Three Days Grace - Without You",
+      "duration": 214,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Without You.mp3?v=1754287196936",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "4bf1a4eb-d0d7-442a-b41d-9cafc0c52362",
+      "title": "Three Days Grace - World So Cold",
+      "duration": 243,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - World So Cold.mp3?v=1754287196936",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "a2bee63c-0525-46d0-87c6-fa3d044ad8c7",
+      "title": "Three Days Grace - Break",
+      "duration": 193,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Break.mp3?v=1754287196932",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "005fd7f6-4d40-4837-b504-75a2bd9b518e",
+      "title": "Three Days Grace - Bully",
+      "duration": 219,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Bully.mp3?v=1754287196932",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "0d2ac9c2-964d-41f9-b361-70af36899a04",
+      "title": "Three Days Grace - Goin' Down",
+      "duration": 186,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Goin' Down.mp3?v=1754287196933",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "16d9d8c2-7ba5-4382-9cf7-8f6d149a5979",
+      "title": "Three Days Grace - Last To Know",
+      "duration": 207,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Last To Know.mp3?v=1754287196933",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "edf86e9e-24e1-4037-b75e-4261f386b0b2",
+      "title": "Three Days Grace - Life Starts Now",
+      "duration": 188,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/cover.webp?v=1754287196936",
+      "groupName": "Three Days Grace",
+      "albumId": "1a53b8a3-c319-4119-aa3c-554069cd1954",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Life Starts Now/Three Days Grace - Life Starts Now.mp3?v=1754287196933",
+      "createdAt": "2025-08-04T05:59:56.942Z"
+    },
+    {
+      "id": "d977a31b-e33a-4ae7-abed-e843d6b9d544",
+      "title": "Three Days Grace - Anonymous",
+      "duration": 194,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Anonymous.mp3?v=1754287434608",
+      "createdAt": "2025-08-04T06:03:54.620Z"
+    },
+    {
+      "id": "90722040-92e5-4ee5-9060-b568c2165976",
+      "title": "Three Days Grace - Give Me A Reason",
+      "duration": 243,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Give Me A Reason.mp3?v=1754287434611",
+      "createdAt": "2025-08-04T06:03:54.620Z"
+    },
+    {
+      "id": "840eca69-01cc-4779-85c1-e7835f7313ec",
+      "title": "Three Days Grace - Happiness",
+      "duration": 174,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Happiness.mp3?v=1754287434612",
+      "createdAt": "2025-08-04T06:03:54.621Z"
+    },
+    {
+      "id": "dd39acb8-ddd9-44d5-9909-70ff580cd6cc",
+      "title": "Three Days Grace - Misery Loves My Company",
+      "duration": 162,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Misery Loves My Company.mp3?v=1754287434612",
+      "createdAt": "2025-08-04T06:03:54.621Z"
+    },
+    {
+      "id": "0034eb82-21a5-4405-98a3-d9397ab49953",
+      "title": "Three Days Grace - Operate",
+      "duration": 203,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Operate.mp3?v=1754287434612",
+      "createdAt": "2025-08-04T06:03:54.621Z"
+    },
+    {
+      "id": "d922667d-bff2-4145-a071-c279d58be548",
+      "title": "Three Days Grace - Sign Of The Times",
+      "duration": 191,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Sign Of The Times.mp3?v=1754287434613",
+      "createdAt": "2025-08-04T06:03:54.621Z"
+    },
+    {
+      "id": "22c7c4f3-f4b2-4104-9934-5623417dc0df",
+      "title": "Three Days Grace - The High Road",
+      "duration": 194,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - The High Road.mp3?v=1754287434613",
+      "createdAt": "2025-08-04T06:03:54.621Z"
+    },
+    {
+      "id": "2a6b7703-a621-42a8-9a8d-fdd42f9a65aa",
+      "title": "Three Days Grace - Time That Remains",
+      "duration": 192,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Time That Remains.mp3?v=1754287434614",
+      "createdAt": "2025-08-04T06:03:54.621Z"
+    },
+    {
+      "id": "4677a131-c07a-4d56-a85c-812645be033c",
+      "title": "Three Days Grace - Unbreakable Heart",
+      "duration": 206,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Unbreakable Heart.mp3?v=1754287434614",
+      "createdAt": "2025-08-04T06:03:54.621Z"
+    },
+    {
+      "id": "e88f65a1-378a-4643-a339-02b2e1f4c77b",
+      "title": "Three Days Grace - Chalk Outline",
+      "duration": 182,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Chalk Outline.mp3?v=1754287434610",
+      "createdAt": "2025-08-04T06:03:54.620Z"
+    },
+    {
+      "id": "c665b284-c21e-4bfa-af8b-69178467f647",
+      "title": "Three Days Grace - Broken Glass",
+      "duration": 201,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Broken Glass.mp3?v=1754287434609",
+      "createdAt": "2025-08-04T06:03:54.620Z"
+    },
+    {
+      "id": "b0c7cd9c-7de9-4a7c-a4db-1b3440a6a104",
+      "title": "Three Days Grace - Expectations",
+      "duration": 163,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Expectations.mp3?v=1754287434610",
+      "createdAt": "2025-08-04T06:03:54.620Z"
+    },
+    {
+      "id": "f6f204f7-050e-485b-a8dd-59c09a7dbf49",
+      "title": "Three Days Grace - Give In To Me",
+      "duration": 199,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/cover.webp?v=1754287434614",
+      "groupName": "Three Days Grace",
+      "albumId": "07b673bc-ddc0-42ad-abc1-5fcebd918135",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "genre": "Рок",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Transit Of Venus/Three Days Grace - Give In To Me.mp3?v=1754287434611",
+      "createdAt": "2025-08-04T06:03:54.620Z"
+    },
+    {
+      "id": "0e244a48-fe77-48b2-9cb0-30d2ba1503d4",
+      "title": "Three Days Grace - Anonymous",
+      "duration": 194,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Tracks/Three Days Grace - Anonymous/cover.webp?v=1754368610262",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Tracks/Three Days Grace - Anonymous/Three Days Grace - Anonymous.mp3?v=1754368610262",
+      "createdAt": "2025-08-05T04:36:50.264Z"
+    },
+    {
+      "id": "6b9da678-3b73-4a02-a5dc-5e42a81a9846",
+      "title": "Three Days Grace - Happiness",
+      "duration": 174,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Tracks/Three Days Grace - Happiness/cover.webp?v=1754371892773",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Tracks/Three Days Grace - Happiness/Three Days Grace - Happiness.mp3?v=1754371892773",
+      "createdAt": "2025-08-05T05:31:32.775Z"
+    },
+    {
+      "id": "f92c2c2c-fe7e-478a-9919-e641ad96a81d",
+      "title": "Three Days Grace - Happiness",
+      "duration": 174,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Albums/Human/cover.webp?v=1753287269979",
+      "groupName": "Three Days Grace",
+      "albumId": "3defbaaa-cec4-454b-8dd2-5e7457d28a13",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Albums/Human/Three Days Grace - Happiness.mp3?v=1758199424642",
+      "createdAt": "2025-09-18T12:43:44.647Z"
+    },
+    {
+      "id": "6bf303b6-cca6-4689-ac5d-99e872145cc7",
+      "title": "qwe",
+      "duration": 174,
+      "cover": "http://localhost:4001/groups/Three Days Grace/Tracks/qwe/cover.webp?v=1758199470282",
+      "groupId": "236d217d-c205-4f15-a131-ff1e0cd58590",
+      "audioUrl": "http://localhost:4001/groups/Three Days Grace/Tracks/qwe/Three Days Grace - Happiness.mp3?v=1758199470282",
+      "createdAt": "2025-09-18T12:44:30.284Z"
     }
   ]
 }

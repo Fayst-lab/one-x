@@ -11,28 +11,37 @@ interface AlbumState {
 
     setCurrentAlbum: (album: Album | null) => void;
     clearCurrentAlbum: () => void;
+    reset: () => void;
 }
 
-export const useAlbumStore = create<AlbumState>((set) => ({
-    albums: [],
-    currentAlbum: null,
+export const useAlbumStore = create<AlbumState>((set) => {
+    const initialState = {
+        albums: [] as Album[],
+        currentAlbum: null as Album | null,
+    };
 
-    setAlbums: (albums) => set({ albums }),
-    addAlbum: (album) =>
-        set((state) => ({
-            albums: [...state.albums, album],
-        })),
-    updateAlbum: (id, updated) =>
-        set((state) => ({
-            albums: state.albums.map((album) =>
-                album.id === id ? { ...album, ...updated } : album,
-            ),
-        })),
-    removeAlbum: (id) =>
-        set((state) => ({
-            albums: state.albums.filter((album) => album.id !== id),
-        })),
+    return {
+        ...initialState,
 
-    setCurrentAlbum: (album) => set({ currentAlbum: album }),
-    clearCurrentAlbum: () => set({ currentAlbum: null }),
-}));
+        setAlbums: (albums) => set({ albums }),
+        addAlbum: (album) =>
+            set((state) => ({
+                albums: [...state.albums, album],
+            })),
+        updateAlbum: (id, updated) =>
+            set((state) => ({
+                albums: state.albums.map((album) =>
+                    album.id === id ? { ...album, ...updated } : album,
+                ),
+            })),
+        removeAlbum: (id) =>
+            set((state) => ({
+                albums: state.albums.filter((album) => album.id !== id),
+            })),
+
+        setCurrentAlbum: (album) => set({ currentAlbum: album }),
+        clearCurrentAlbum: () => set({ currentAlbum: null }),
+
+        reset: () => set(initialState),
+    };
+});

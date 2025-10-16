@@ -17,3 +17,4 @@ export * from './UserAvatar/UserAvatar';
 export * from './ConfirmDeleteModal/ConfirmDeleteModal';
 export * from './Skeleton/Skeleton';
 export * from './AutoHideScroll/AutoHideScroll';
+export * from './EntityHeader/EntityHeader';
